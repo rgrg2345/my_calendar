@@ -76,7 +76,6 @@ public class my_calendar {
 			else
 				continue;
 		}
-		
 		calendar(year,mon);
 	}
 }
