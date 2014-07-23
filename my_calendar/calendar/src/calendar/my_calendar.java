@@ -44,7 +44,7 @@ public class my_calendar {
 	{
 		int monthday=getmonthday(year,month)+1;
 		int week=getWeek(year,month);//1號星期幾
-		System.out.println(year+"/"+month  +"    week:"+week);
+		System.out.println(year+"/"+month);
 		System.out.println("Sun Mon Tue Wed Thu Fri Sat");
 		for(int i=0;i<week*4;i++)
 			System.out.print(" ");
@@ -62,10 +62,21 @@ public class my_calendar {
 	}
 	public static void main(String args[] )
 	{
+		String stri []={"year(at least 1900)","month"};
+		int year=0,mon=0;
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
-		System.out.println("Please input year and month.");
-		int year=scanner.nextInt();
-		int mon=scanner.nextInt();
+		for(int i=0;;){
+			System.out.println("Please input "+stri[i]);
+			mon=scanner.nextInt();
+			if(i==0&&mon>=1900){
+			year=mon;
+			i++;
+			}else if(i!=0&&mon<13&&mon>1)
+				break;
+			else
+				continue;
+		}
+		
 		calendar(year,mon);
 	}
 }
